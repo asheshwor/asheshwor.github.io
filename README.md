@@ -1,13 +1,12 @@
-##My online resume
+# My online resume page
 
-This repository contains slides for my online resume.
+to be added
 
-View the slides (when complete) at [http://asheshwor.github.io/](http://asheshwor.github.io/)
+# Attribution
 
-Recommended browsers: Chrome, Safari, Firefox, Opera and IE10
+## Theme
+
+Minimal theme by 'orderedlist' licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
 
 
 
-### License for Reveal.js framework
-
-This repository contains the code of [Reveal.js](https://github.com/hakimel/reveal.js) licensed under the [MIT license](https://github.com/asheshwor/asheshwor.github.io/blob/master/LICENSE).

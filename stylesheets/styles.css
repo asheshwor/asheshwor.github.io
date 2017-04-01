@@ -241,14 +241,15 @@ footer {
 
 .btn-outline {
     background-color: transparent;
-    color: #0095eb;
+    color: #000;
     transition: all .5s;
     outline-color: #fff;
 }
 
 .btn-primary.btn-outline {
     /*color: #428bca;*/
-    color: #0095eb;
+    /*color: #0095eb;*/
+    color: #000;
 }
 
 .btn-success.btn-outline {

@@ -219,7 +219,7 @@ footer {
 
 .btn-outline {
     background-color: transparent;
-    color: inherit;
+    color: #0095eb;
     transition: all .5s;
 }
 

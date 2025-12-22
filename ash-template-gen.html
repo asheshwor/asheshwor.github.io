@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Profile - [Your Name]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Dark slate gray text */
+            cursor: crosshair; /* Change cursor to crosshairs on page hover */
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Hide elements during print for a cleaner PDF */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                cursor: default; /* Revert cursor for printing */
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 sm:p-8 lg:p-12 max-w-7xl">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <aside class="lg:w-1/4 p-6 bg-white rounded-xl shadow-lg flex flex-col items-center lg:items-start sticky top-8 h-fit">
+                <h1 id="profile-name" class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2 text-center lg:text-left"></h1>
+                <h2 id="profile-title" class="text-lg sm:text-xl font-medium text-indigo-700 mb-1 text-center lg:text-left"></h2>
+                <p id="profile-affiliation" class="text-sm text-gray-600 mb-4 text-center lg:text-left"></p>
+                <p id="profile-tagline" class="text-base text-gray-700 leading-relaxed mb-6 text-center lg:text-left"></p>
+
+                <div id="social-media-links" class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                    </div>
+
+                <button onclick="window.print()" class="w-full flex items-center justify-center space-x-2 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-200 mb-8 shadow-md no-print">
+                    <i class="fas fa-file-pdf text-xl"></i>
+                    <span class="font-medium">Save as PDF</span>
+                </button>
+
+                <div class="mt-auto pt-6 border-t border-gray-200 w-full text-center lg:text-left">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Contact:</h3>
+                    <p id="contact-email" class="flex items-center justify-center lg:justify-start text-gray-700 mb-2">
+                        <i class="fas fa-envelope mr-2 text-indigo-500"></i>
+                        <a href="#" class="hover:underline"></a>
+                    </p>
+                    <p id="contact-location" class="flex items-center justify-center lg:justify-start text-gray-700">
+                        <i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i>
+                    </p>
+                </div>
+            </aside>
+
+            <main class="lg:w-3/4 flex-grow">
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-flask mr-3 text-indigo-500"></i> Research Areas
+                        </h2>
+                    </div>
+                    <div id="research-areas-content" class="content-area"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-project-diagram mr-3 text-indigo-500"></i> Current Projects
+                        </h2>
+                    </div>
+                    <div id="current-projects-content" class="content-area space-y-4"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-briefcase mr-3 text-indigo-500"></i> Employment
+                        </h2>
+                    </div>
+                    <div id="employment-content" class="content-area space-y-4"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-star mr-3 text-indigo-500"></i> Additional Experience
+                        </h2>
+                    </div>
+                    <div id="additional-experience-content" class="content-area space-y-4"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-microphone-alt mr-3 text-indigo-500"></i> Media Features
+                        </h2>
+                    </div>
+                    <div id="media-features-content" class="content-area space-y-4"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-book-open mr-3 text-indigo-500"></i> Publications and Conference Presentations
+                        </h2>
+                    </div>
+                    <div id="publications-content" class="content-area space-y-6"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-newspaper mr-3 text-indigo-500"></i> Non-academic Publications
+                        </h2>
+                    </div>
+                    <div id="non-academic-publications-content" class="content-area space-y-4"></div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+                    <div class="py-4 mb-4 border-b border-gray-200 bg-gray-50 -mx-6 px-6 rounded-t-xl hover:bg-gray-100 transition-colors duration-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-heart mr-3 text-indigo-500"></i> Hobbies and Interests
+                        </h2>
+                    </div>
+                    <div id="hobbies-content" class="content-area"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script type="text/markdown" id="academic-profile-markdown-source">
+# Profile
+## Your Full Name
+[Your Academic Title]
+[Your Affiliation/Department]
+[Your Tagline or Brief Bio: e.g., Researcher focusing on diverse interdisciplinary topics / Expert in X & Y]
+
+## Social Media
+- Twitter: https://twitter.com/[YourTwitterHandle]
+- GitHub: https://github.com/[YourGitHubHandle]
+- LinkedIn: https://linkedin.com/in/[YourLinkedInHandle]
+- Threads: https://www.threads.net/@yourthreadsusername
+- Instagram: https://www.instagram.com/yourinstagramusername/
+
+## Contact Information
+- Email: your.email@example.com
+- Location: [Your City, Your Country]
+
+# Main Content
+
+## Research Areas
+- [Research Area 1: e.g., Artificial Intelligence and Machine Learning]
+- [Research Area 2: e.g., Sustainable Urban Development]
+- [Research Area 3: e.g., Cognitive Neuroscience]
+- [Research Area 4: e.g., Environmental Policy and Governance]
+- [Research Area 5: e.g., Human-Computer Interaction]
+
+## Current Projects
+- ### [Project Title 1]
+  [Brief description of Project 1]
+  [Start Date] - Present
+  - [Key activity/goal 1]
+  - [Key activity/goal 2]
+- ### [Project Title 2]
+  [Brief description of Project 2]
+  [Start Date] - [End Date (if applicable)]
+
+## Employment
+- ### [Current Position Title]
+  [Current Institution/Organization]
+  [Start Date] - Present
+  - [Key Responsibility/Achievement 1]
+  - [Key Responsibility/Achievement 2]
+- ### [Previous Position Title]
+  [Previous Institution/Organization]
+  [Start Date] - [End Date]
+  - [Key Responsibility/Achievement 1]
+  - [Key Responsibility/Achievement 2]
+
+## Additional Experience
+- ### [Additional Role/Activity 1]
+  [Organization/Context]
+  [Dates]
+- ### [Additional Role/Activity 2]
+  [Organization/Context]
+  [Dates]
+- ### [Additional Role/Activity 3]
+  [Organization/Context]
+  [Dates]
+
+## Media Features
+- ### [Media Outlet Name 1]
+  [Article/Feature Title 1]
+  [Date of Feature]
+  Link: [Link to media feature 1]
+- ### [Media Outlet Name 2]
+  [Article/Feature Title 2]
+  [Date of Feature]
+  Link: [Link to media feature 2]
+
+## Publications and Conference Presentations
+- [Author(s) Name(s)]. ([Year]). [Publication Title]. *[Journal/Conference Name]* ([Month Year]). DOI: [Link to DOI or paper]
+- [Author(s) Name(s)]. ([Year]). [Another Publication Title]. *[Journal/Conference Name]*. DOI: [Link to DOI or paper]
+- [Author(s) Name(s)]. ([Year]). [Conference Presentation Title]. Paper presented at the "[Conference Name]", [Date]. [Location].
+  - Slides: [Link to Slides]
+  - Conference Link: [Link to Conference]
+
+## Non-academic Publications
+- ### [Article Title 1]
+  [Platform/Outlet 1]
+  [Date]
+  Link: [Link to non-academic publication 1]
+- ### [Article Title 2]
+  [Platform/Outlet 2]
+  [Date]
+  Link: [Link to non-academic publication 2]
+
+## Hobbies and Interests
+- [Hobby/Interest 1: e.g., Hiking and Photography]
+- [Hobby/Interest 2: e.g., Reading Science Fiction]
+- [Hobby/Interest 3: e.g., Playing Chess]
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMarkdownContent();
+        });
+
+        async function fetchMarkdownContent() {
+            try {
+                // Read markdown directly from the script tag
+                const markdownScript = document.getElementById('academic-profile-markdown-source');
+                if (!markdownScript) {
+                    throw new Error('Markdown source script tag not found.');
+                }
+                const markdown = markdownScript.textContent;
+                renderContent(markdown);
+            } catch (error) {
+                console.error('Error fetching or parsing markdown:', error);
+                // Fallback or error message for the user
+                document.getElementById('profile-name').textContent = 'Error Loading Profile';
+                document.getElementById('profile-tagline').textContent = 'Please check the console for details.';
+            }
+        }
+
+        function renderContent(markdown) {
+            const sections = splitMarkdownIntoSections(markdown);
+
+            // Render Profile Section
+            if (sections['Profile']) {
+                const profileLines = sections['Profile'].split('\n').filter(line => line.trim() !== '');
+                document.getElementById('profile-name').textContent = profileLines[0] ? profileLines[0].replace('## ', '') : '';
+                document.getElementById('profile-title').textContent = profileLines[1] ? profileLines[1] : '';
+                document.getElementById('profile-affiliation').textContent = profileLines[2] ? profileLines[2] : '';
+                document.getElementById('profile-tagline').textContent = profileLines[3] ? profileLines[3] : '';
+            }
+
+            // Render Social Media
+            if (sections['Social Media']) {
+                const socialMediaContainer = document.getElementById('social-media-links');
+                socialMediaContainer.innerHTML = ''; // Clear existing content
+                const socialMediaLines = sections['Social Media'].split('\n').filter(line => line.trim() !== '');
+                socialMediaLines.forEach(line => {
+                    const match = line.match(/^- (Twitter|GitHub|LinkedIn|Threads|Instagram): (.*)$/);
+                    if (match) {
+                        const platform = match[1];
+                        const url = match[2];
+                        let iconClass = '';
+                        let textColor = '';
+                        let bgColor = '';
+                        switch (platform) {
+                            case 'Twitter': iconClass = 'fab fa-twitter'; textColor = 'text-blue-500'; bgColor = 'bg-blue-50'; break;
+                            case 'GitHub': iconClass = 'fab fa-github'; textColor = 'text-gray-700'; bgColor = 'bg-gray-100'; break;
+                            case 'LinkedIn': iconClass = 'fab fa-linkedin'; textColor = 'text-blue-700'; bgColor = 'bg-blue-100'; break;
+                            case 'Threads': iconClass = 'fab fa-threads'; textColor = 'text-gray-800'; bgColor = 'bg-gray-100'; break;
+                            case 'Instagram': iconClass = 'fab fa-instagram'; textColor = 'text-pink-600'; bgColor = 'bg-pink-50'; break;
+                        }
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.target = "_blank";
+                        link.className = `flex items-center space-x-2 ${textColor} hover:${textColor.replace('-500', '-700').replace('-600', '-800').replace('-700', '-900').replace('-800', '-black')} transition-colors duration-200 p-2 rounded-md ${bgColor} hover:${bgColor.replace('-50', '-100').replace('-100', '-200')}`;
+                        link.innerHTML = `<i class="${iconClass} text-xl"></i><span class="font-medium">${platform}</span>`;
+                        socialMediaContainer.appendChild(link);
+                    }
+                });
+            }
+
+            // Render Contact Information
+            if (sections['Contact Information']) {
+                const contactLines = sections['Contact Information'].split('\n').filter(line => line.trim() !== '');
+                const emailMatch = contactLines[0] ? contactLines[0].match(/Email: (.*)$/) : null;
+                const locationMatch = contactLines[1] ? contactLines[1].match(/Location: (.*)$/) : null;
+
+                const emailLink = document.querySelector('#contact-email a');
+                if (emailMatch) {
+                    emailLink.href = `mailto:${emailMatch[1]}`;
+                    emailLink.textContent = emailMatch[1];
+                }
+                const locationPara = document.getElementById('contact-location');
+                if (locationMatch) {
+                    locationPara.innerHTML = `<i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i>${locationMatch[1]}`;
+                }
+            }
+
+            // Render Main Content Sections
+            renderListSection('Research Areas', 'research-areas-content', sections['Research Areas']);
+            renderComplexSection('Current Projects', 'current-projects-content', sections['Current Projects']);
+            renderComplexSection('Employment', 'employment-content', sections['Employment']);
+            renderComplexSection('Additional Experience', 'additional-experience-content', sections['Additional Experience']);
+            renderComplexSection('Media Features', 'media-features-content', sections['Media Features'], true); // Pass true for link parsing
+            renderPublicationsSection('Publications and Conference Presentations', 'publications-content', sections['Publications and Conference Presentations']);
+            renderComplexSection('Non-academic Publications', 'non-academic-publications-content', sections['Non-academic Publications'], true); // Pass true for link parsing
+            renderListSection('Hobbies and Interests', 'hobbies-content', sections['Hobbies and Interests']);
+        }
+
+        function splitMarkdownIntoSections(markdown) {
+            const sections = {};
+            const mainSections = markdown.split('# ').filter(s => s.trim() !== ''); // Split by top-level headings
+            mainSections.forEach(section => {
+                const lines = section.split('\n');
+                const title = lines[0].trim();
+                sections[title] = lines.slice(1).join('\n').trim();
+            });
+            return sections;
+        }
+
+        function renderListSection(sectionTitle, elementId, content) {
+            if (content) {
+                const ul = document.createElement('ul');
+                ul.className = 'list-disc pl-5 text-gray-700 leading-relaxed space-y-2';
+                content.split('\n').filter(line => line.startsWith('- ')).forEach(line => {
+                    const li = document.createElement('li');
+                    li.textContent = line.substring(2).trim();
+                    ul.appendChild(li);
+                });
+                document.getElementById(elementId).appendChild(ul);
+            }
+        }
+
+        function renderComplexSection(sectionTitle, elementId, content, parseLinks = false) {
+            if (content) {
+                const container = document.getElementById(elementId);
+                container.innerHTML = ''; // Clear existing content
+                const items = content.split('### ').filter(item => item.trim() !== '');
+
+                items.forEach(item => {
+                    const lines = item.split('\n').filter(line => line.trim() !== '');
+                    const title = lines[0].trim();
+                    const div = document.createElement('div');
+                    div.innerHTML = `<h3 class="text-lg font-medium text-gray-800">${title}</h3>`;
+
+                    let currentList = null;
+                    lines.slice(1).forEach(line => {
+                        if (line.startsWith('- ')) {
+                            if (!currentList) {
+                                currentList = document.createElement('ul');
+                                currentList.className = 'list-disc pl-5 text-gray-700 text-sm mt-2';
+                                div.appendChild(currentList);
+                            }
+                            const li = document.createElement('li');
+                            li.textContent = line.substring(2).trim();
+                            currentList.appendChild(li);
+                        } else if (line.startsWith('Link: ') && parseLinks) {
+                            const linkText = line.substring('Link: '.length).trim();
+                            const linkMatch = linkText.match(/\[(.*?)\]\((.*?)\)/);
+                            if (linkMatch) {
+                                const linkElement = document.createElement('a');
+                                linkElement.href = linkMatch[2];
+                                linkElement.target = "_blank";
+                                linkElement.className = 'text-indigo-600 hover:underline text-sm';
+                                linkElement.textContent = 'Read more';
+                                div.appendChild(linkElement);
+                            } else {
+                                const p = document.createElement('p');
+                                p.className = 'text-gray-600';
+                                p.textContent = line.trim();
+                                div.appendChild(p);
+                            }
+                            currentList = null; // Reset list for next block
+                        } else {
+                            const p = document.createElement('p');
+                            p.className = line.includes('Date') || line.includes('Present') ? 'text-sm text-gray-500' : 'text-gray-600';
+                            p.textContent = line.trim();
+                            div.appendChild(p);
+                            currentList = null; // Reset list for next block
+                        }
+                    });
+                    container.appendChild(div);
+                });
+            }
+        }
+
+        function renderPublicationsSection(sectionTitle, elementId, content) {
+            if (content) {
+                const container = document.getElementById(elementId);
+                container.innerHTML = ''; // Clear existing content
+                const items = content.split('- ').filter(item => item.trim() !== '');
+
+                items.forEach(item => {
+                    const div = document.createElement('div');
+                    const p = document.createElement('p');
+                    p.className = 'text-gray-700 leading-relaxed';
+
+                    // Handle italic for journal/conference name
+                    let formattedItem = item.replace(/\*\[(.*?)\]\*/g, '<em class="font-medium">$1</em>');
+
+                    // Handle DOI links
+                    formattedItem = formattedItem.replace(/DOI: \[(.*?)\]\((.*?)\)/g, (match, text, url) => {
+                        return `DOI: <a href="${url}" target="_blank" class="text-indigo-600 hover:underline ml-1">${text}</a>`;
+                    });
+
+                    // Handle Slides/Conference Links for presentations
+                    const slidesMatch = formattedItem.match(/Slides: \[(.*?)\]/);
+                    const conferenceMatch = formattedItem.match(/Conference Link: \[(.*?)\]/);
+
+                    if (slidesMatch || conferenceMatch) {
+                        const presentationText = formattedItem.split('Slides:')[0].split('Conference Link:')[0].trim();
+                        p.innerHTML = presentationText;
+                        div.appendChild(p);
+
+                        const buttonContainer = document.createElement('div');
+                        buttonContainer.className = 'flex gap-2 mt-2';
+
+                        if (slidesMatch) {
+                            const slideLink = document.createElement('a');
+                            slideLink.href = slidesMatch[1];
+                            slideLink.target = "_blank";
+                            slideLink.className = 'inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-indigo-200 transition-colors duration-200';
+                            slideLink.textContent = 'Slides';
+                            buttonContainer.appendChild(slideLink);
+                        }
+                        if (conferenceMatch) {
+                            const confLink = document.createElement('a');
+                            confLink.href = conferenceMatch[1];
+                            confLink.target = "_blank";
+                            confLink.className = 'inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-indigo-200 transition-colors duration-200';
+                            confLink.textContent = 'Conference Link';
+                            buttonContainer.appendChild(confLink);
+                        }
+                        div.appendChild(buttonContainer);
+
+                    } else {
+                        p.innerHTML = formattedItem;
+                        div.appendChild(p);
+                    }
+                    container.appendChild(div);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

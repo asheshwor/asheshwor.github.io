@@ -11,8 +11,8 @@ library(stringr)
 # You can modify this content directly within this R script.
 markdown_content <- paste0(c(
   "# Profile",
-  "## Your Full Name",
-  "[Your Academic Title]",
+  "## Asheshwor Shrestha",
+  "Urban Planner & Researcher",
   "[Your Affiliation/Department]",
   "[Your Tagline or Brief Bio: e.g., Researcher focusing on diverse interdisciplinary topics / Expert in X & Y]",
   "",
@@ -30,7 +30,7 @@ markdown_content <- paste0(c(
   "# Main Content",
   "",
   "## Research Areas",
-  "- [Research Area 1: e.g., Artificial Intelligence and Machine Learning]",
+  "- Urban ecological systems",
   "- [Research Area 2: e.g., Sustainable Urban Development]",
   "- [Research Area 3: e.g., Cognitive Neuroscience]",
   "- [Research Area 4: e.g., Environmental Policy and Governance]",
